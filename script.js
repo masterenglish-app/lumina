@@ -10,9 +10,12 @@ sendBtn.addEventListener("click", () => {
     const text = input.value.trim();
     if (text === "") return;
 
-    output.textContent = "LUMINA: 「" + text + "」を受け取りました。";
+    const reply = luminaReply(text);
+
+    output.textContent = "LUMINA: " + reply;
     input.value = "";
 });
+
 function luminaReply(userText) {
     // ユーザーの入力を整える
     const text = userText.trim();
